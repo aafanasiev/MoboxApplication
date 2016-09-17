@@ -1,7 +1,6 @@
 package com.aafanasiev.moboxapplication.ui.activities;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;

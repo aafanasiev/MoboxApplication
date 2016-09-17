@@ -12,9 +12,6 @@ import com.aafanasiev.moboxapplication.helper.Constants;
 
 import javax.inject.Inject;
 
-/**
- * Created by a.afanasiev on 16.09.2016.
- */
 public class TimeService extends Service {
 
     public static String TAG = TimeService.class.getSimpleName();

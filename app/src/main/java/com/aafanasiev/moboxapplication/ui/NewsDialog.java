@@ -10,9 +10,6 @@ import android.widget.TextView;
 import com.aafanasiev.moboxapplication.R;
 import com.squareup.picasso.Picasso;
 
-/**
- * Created by Aleksandr on 17.09.2016.
- */
 public class NewsDialog extends Dialog {
 
     String dialogText;

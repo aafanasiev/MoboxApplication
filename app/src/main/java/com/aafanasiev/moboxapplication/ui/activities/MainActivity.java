@@ -43,9 +43,6 @@ import java.util.Random;
 
 import javax.inject.Inject;
 
-/**
- * Created by a.afanasiev on 16.09.2016.
- */
 public class MainActivity extends BaseActivity implements MainActivityInterface {
 
     @Inject

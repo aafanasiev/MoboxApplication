@@ -24,9 +24,6 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by a.afanasiev on 16.09.2016.
- */
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     List<Article> articleList = new ArrayList<>();

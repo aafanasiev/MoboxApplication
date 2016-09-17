@@ -20,9 +20,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by a.afanasiev on 16.09.2016.
- */
 public class MainActivityPresenter {
 
     public static String TAG = MainActivityPresenter.class.getSimpleName();
