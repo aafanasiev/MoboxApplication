@@ -21,11 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activities.DetailActivity"
-            android:parentActivityName=".ui.activities.MainActivity" />
-        <activity android:name=".ui.activities.BaseActivity"></activity>
-        <service android:name=".ui.TimeService"/>
+        <activity android:name=".ui.activities.DetailActivity" />
+        <activity android:name=".ui.activities.BaseActivity" />
+
+        <service android:name=".ui.TimeService" />
     </application>
 
 </manifest>

@@ -14,11 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.aafanasiev.moboxapplication.MoboxApplicationApp;
 import com.aafanasiev.moboxapplication.databinding.NewsItemBinding;
+import com.aafanasiev.moboxapplication.helper.Constants;
 import com.aafanasiev.moboxapplication.model.Article;
 import com.aafanasiev.moboxapplication.ui.activities.DetailActivity;
-import com.aafanasiev.moboxapplication.ui.activities.MainActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -26,8 +25,8 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    List<Article> articleList = new ArrayList<>();
-    Context context;
+    private List<Article> articleList = new ArrayList<>();
+    private Context context;
 
     public NewsAdapter(List<Article> articleList, Context context) {
         this.articleList = articleList;
@@ -37,7 +36,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     @Override
     public NewsAdapter.NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        NewsItemBinding binding = NewsItemBinding.inflate(inflater,parent,false);
+        NewsItemBinding binding = NewsItemBinding.inflate(inflater, parent, false);
         return new NewsViewHolder(binding.getRoot());
     }
 
@@ -49,9 +48,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
         holder.binding.getRoot().setOnClickListener(view -> {
             Intent detailIntent = new Intent(context, DetailActivity.class);
-            detailIntent.putExtra("Image", articleList.get(position).getUrlToImage());
-            detailIntent.putExtra("Description", articleList.get(position).getDescription());
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, holder.binding.imageNews, "news_image");
+            detailIntent.putExtra(Constants.IMAGE, articleList.get(position).getUrlToImage());
+            detailIntent.putExtra(Constants.DESCRIPTION, articleList.get(position).getDescription());
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, holder.binding.imageNews, Constants.NEWS_IMAGE);
             context.startActivity(detailIntent, options.toBundle());
         });
 
@@ -62,19 +61,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return articleList.size();
     }
 
-    public void upDate(List<Article> aList){
+    public void upDate(List<Article> aList) {
         this.articleList = aList;
         notifyDataSetChanged();
     }
 
-    public void removeItem(int position){
+    public void removeItem(int position) {
         articleList.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeRemoved(position,articleList.size());
+        notifyItemRangeRemoved(position, articleList.size());
     }
 
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder{
+    public class NewsViewHolder extends RecyclerView.ViewHolder {
 
         NewsItemBinding binding;
 
@@ -87,7 +86,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     }
 
     @BindingAdapter("bind:imageUrl")
-    public static void loadImage(ImageView view, String s){
+    public static void loadImage(ImageView view, String s) {
         Picasso.with(view.getContext()).load(s).into(view);
     }
 

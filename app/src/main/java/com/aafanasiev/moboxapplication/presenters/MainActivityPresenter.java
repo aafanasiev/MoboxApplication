@@ -57,8 +57,6 @@ public class MainActivityPresenter {
                         .collect(Collectors.toList());
 
                 mainActivityInterface.getArticles(articleList);
-
-
             }
 
             @Override
@@ -66,6 +64,5 @@ public class MainActivityPresenter {
                 Log.i(TAG, "onFailure: Retrofit error");
             }
         });
-
     }
 }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MoboxApplication</string>
+
+
+    //dialog text //
+    <string name="dialog_title">Внимание</string>
+    <string name="dialog_text">Текущее время</string>
+    <string name="dialog_button">Закрыть</string>
+
 </resources>

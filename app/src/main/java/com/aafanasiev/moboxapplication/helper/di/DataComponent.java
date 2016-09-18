@@ -2,6 +2,7 @@ package com.aafanasiev.moboxapplication.helper.di;
 
 import com.aafanasiev.moboxapplication.presenters.MainActivityPresenter;
 import com.aafanasiev.moboxapplication.ui.TimeService;
+import com.aafanasiev.moboxapplication.ui.activities.BaseActivity;
 import com.aafanasiev.moboxapplication.ui.activities.DetailActivity;
 import com.aafanasiev.moboxapplication.ui.activities.MainActivity;
 
@@ -17,7 +18,7 @@ public interface DataComponent {
 
     void inject(DetailActivity activity);
 
-    void inject(MainActivityPresenter presenter);
+    void inject(BaseActivity activity);
 
-    void inject(TimeService service);
+    void inject(MainActivityPresenter presenter);
 }

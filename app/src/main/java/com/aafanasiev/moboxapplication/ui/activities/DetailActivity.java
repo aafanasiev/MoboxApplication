@@ -7,14 +7,15 @@ import android.widget.TextView;
 
 import com.aafanasiev.moboxapplication.MoboxApplicationApp;
 import com.aafanasiev.moboxapplication.R;
+import com.aafanasiev.moboxapplication.helper.Constants;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
 public class DetailActivity extends BaseActivity {
 
-    ImageView iv;
-    TextView tv;
+    private ImageView iv;
+    private TextView tv;
 
     @Inject
     Context context;
@@ -30,7 +31,7 @@ public class DetailActivity extends BaseActivity {
         tv = (TextView)findViewById(R.id.news_detail);
 
 
-        Picasso.with(context).load(getIntent().getStringExtra("Image")).into(iv);
-        tv.setText(getIntent().getStringExtra("Description"));
+        Picasso.with(context).load(getIntent().getStringExtra(Constants.IMAGE)).into(iv);
+        tv.setText(getIntent().getStringExtra(Constants.DESCRIPTION));
     }
 }
